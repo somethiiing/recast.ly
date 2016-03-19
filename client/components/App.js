@@ -9,12 +9,12 @@ class App extends React.Component {
   }
  // refactored code from provided solution
   componentDidMount() {
-    this.getYoutubeVideos('cute cats');
+    this.getYoutubeVideos('cute cats  ');
   }
 
   getYoutubeVideos(query) {
     var options = {
-      key: window.YOUTUBE_API_KEY,
+      key: YOUTUBE_API_KEY,
       query: query
     };
     
@@ -36,7 +36,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Nav />
+        <Nav 
+          handleSearchInputChange={_.debounce((input) => this.getYoutubeVideos(input), 400)}
+        />
         <div className="col-md-7">
           <VideoPlayer video={this.state.currentVideo}/>
         </div>
