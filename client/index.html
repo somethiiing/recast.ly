@@ -16,6 +16,14 @@
   <script type="text/babel" src="data/exampleVideoData.js"></script>
   <script type="text/babel" src="components/VideoListEntry.js"></script>
   <script type="text/babel" src="components/VideoList.js"></script>
+  <script type="text/babel">
+
+  window.currentVideo = window.exampleVideoData[0]; 
+  window.videoURL = "https://www.youtube.com/embed/" + window.currentVideo.id.videoId;
+  window.videoTitle = window.currentVideo.snippet.title;
+  window.videoDesc = window.currentVideo.snippet.description;
+
+  </script>
   <script type="text/babel" src="components/VideoPlayer.js"></script>
   <script type="text/babel" src="components/Nav.js"></script>
   <script type="text/babel" src="components/Search.js"></script>
