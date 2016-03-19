@@ -8,8 +8,9 @@ var VideoPlayer = ({video}) => (
       <div>{video.snippet.description}</div>
     </div>
   </div>
-  )
+  );
 
+window.VideoPlayer = VideoPlayer;
 
 
 
@@ -37,7 +38,6 @@ var VideoPlayer = ({video}) => (
 //   }
 // }
 
-window.VideoPlayer = VideoPlayer;
 
 
 // // class VideoPlayer extends React.Component {

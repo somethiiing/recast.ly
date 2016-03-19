@@ -7,6 +7,25 @@ class App extends React.Component {
       videos: exampleVideoData
     };
   }
+ // refactored code from provided solution
+  componentDidMount() {
+    this.getYoutubeVideos('cute cats');
+  }
+
+  getYoutubeVideos(query) {
+    var options = {
+      key: this.YOUTUBE_API_KEY,
+      query: query
+    };
+    
+    searchYouTube(options, (videos) =>
+      this.setState({
+        videos: videos,
+        currentVideo: videos[0]
+      })
+    );
+  }
+
 
   handleVideoListEntryClick(video) {
     this.setState({
@@ -31,7 +50,7 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App API_KEY={window.YOUTUBE_API_KEY} />, document.getElementById('app'));
 
 
 
