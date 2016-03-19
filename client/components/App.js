@@ -3,8 +3,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      currentVideo: exampleVideoData[0],
-      videos: exampleVideoData
+      currentVideo: null,
+      videos: []
     };
   }
  // refactored code from provided solution
@@ -14,7 +14,7 @@ class App extends React.Component {
 
   getYoutubeVideos(query) {
     var options = {
-      key: this.YOUTUBE_API_KEY,
+      key: window.YOUTUBE_API_KEY,
       query: query
     };
     
@@ -50,7 +50,7 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App API_KEY={window.YOUTUBE_API_KEY} />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
 
 
 
